@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout">
+    <meta name="author" content="Devcrud">
+    <title>Instaraising - Checkout</title>
+    <link rel="icon" type="image/png" href="../../img/logoonly.png"/>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/headers.css">
+    <link rel="stylesheet" href="../../public/css/cookies.css">
+    <link rel="stylesheet" href="../../public/css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+    <header class="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="../../img/logo.png" alt="Instaraising" width="150px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"></i>Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"></i>About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="search.html">Find Match</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                        <!-- Add the Languages Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languagesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Languages
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="languagesDropdown">
+                                <!-- Add your language options here -->
+                                <a class="dropdown-item" href="index.html">English</a>
+                                <a class="dropdown-item" href="../no/index.html">Norwegian</a>
+                                <a class="dropdown-item" href="../sv/index.html">Swedish</a>
+                                <a class="dropdown-item" href="../dk/index.html">Danish</a>
+                                <a class="dropdown-item" href="../fi/index.html">Finnish</a>
+                                <a class="dropdown-item" href="../is/index.html">Icelandic</a>
+                                <!-- <a class="dropdown-item" href="../de/index.html">German</a>
+                                <a class="dropdown-item" href="../fr/index.html">French</a>
+                                <a class="dropdown-item" href="../es/index.html">Spanish</a> -->
+                                <!-- Add more language options as needed -->
+                            </div>
+                        </li>
+                        <!-- End Languages Dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="checkoutdetails">
+            <div class="row">
+                <div class="logodiv">
+                    <img id="orglogo" src="" alt="org-logo">
+                </div>
+            </div>
+            <div class="row">
+                <div id="orgname"></div>
+            </div>
+        </div>
+        <!-- <form action="https://instaraisingwebapp.azurewebsites.net/login" method="POST" id="payment-form" class="mb-3" onsubmit="return validateForm()"> -->
+        <form action="http://127.0.0.1:5000/login" method="POST" id="payment-form" class=" mb-3" onsubmit="return validateForm()">
+            <div class="payment-container mb-3">
+                <div class="row paymentRow">
+                    <div class="col-9">
+                        <label for="amountDonated" class="paymentamountdisplay">Average contribution is € 25.</label> <br>
+                        <label  class="paymentamountdisplay" id="amountselectedlabel"></label>
+                        <input type="text" class="form-control" id="amountDonated" value="25" name="amountDonated" hidden required>
+                    </div>
+                    <div class="col-3">
+                        <div class="dropdown" style="float:right;">
+                            <button class="dropbtn">Change Amount</button>
+                            <div class="dropdown-content">
+                                <a href="#" class="newamount" data-amount="5">€ 5</a>
+                                <a href="#" class="newamount" data-amount="15">€ 15</a>
+                                <a href="#" class="newamount" data-amount="25">€ 25</a>
+                                <a href="#" class="newamount" data-amount="35">€ 35</a>
+                                <a href="#" class="newamount" data-amount="45">€ 45</a>
+                                <a href="#" class="newamount" data-amount="85">€ 85</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        <!-- <form action="" method="POST" id="payment-form" class="payment-container mb-3">  -->
+            <div class="payment-container">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName" class="paymentLabel">First Name :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName" class="paymentLabel">Last Name :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mobileNumber" class="paymentLabel">Phone Number :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="mobileNumber" name="mobileNumber" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="paymentLabel">Email :</label><span class="red-asterisk">*</span>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="address" class="paymentLabel">Address :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="postalCode" class="paymentLabel">Postal code :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="postPlace" class="paymentLabel">Post office :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="postPlace" name="postPlace" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <label for="orgNamePay" class="paymentLabel">Organization : </label>
+                            <p id="organizationnametext"></p> -->
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <label for="currency" class="paymentLabel">Currency : EURO</label> -->
+                            <input type="text" class="form-control" id="currency" name="currency" value="EURO" hidden required>
+                            <input type="text" class="form-control" id="language" value="en" name="language" required hidden>
+                            <input type="text" class="form-control" id="orgNamePay" name="orgNamePay" hidden required >
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="amountDonated" class="paymentLabel">Amount Donated : € 25.00  </label>
+                            <input type="text" class="form-control" id="amountDonated" value="25" name="amountDonated" hidden required>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="row mt-2 mb-2">
+                    <h5>Select Payment Method</h5>
+                    
+                    <div class="payment-options">
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input type="radio" name="product" value="NORDICORG" class="form-check-input" id="nordicorg">
+                                <label class="form-check-label" for="credit">
+                                    <div class="card-icon">
+                                        
+                                        <img src="/assets/img/credit-card-icon.png" alt="Credit Card Icon"> Subscribe to Fund this organization with credit card
+                                    </div>
+                                    
+                                </label>
+                            </div>
+                           
+                        </div>
+                       
+                    </div>
+                </div>
+               
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTerms">
+                        I accept the <a href="privacy.html" class="linkColor">terms and conditions</a>
+                    </label><span class="red-asterisk">*</span>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acceptNewsletter">
+                    <label class="form-check-label" for="acceptNewsletter">
+                        I want to receive newsletters
+                    </label>
+                </div>
+                <button id="payNow" class="paynow mt-3 mb-3" type="submit"><span >Pay now</span></button>
+                <p id="validationResult" style="color: red; display: none;">Please select the payment method</p>
+            </div>
+            
+        </form>
+
+    </div>
+
+    <!-- Overlay background -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Cookie Consent Modal -->
+    <div id="cookieConsent">
+        <div class="container">
+            <div class="cookieheading">
+                <h4>This page uses cookies</h4>
+            </div>
+            <div class="cookiecontent">
+                <p>
+                    On our website we use cookies to improve the user experience, optimize our website and for marketing.
+                    By clicking accept, you agree to our use of these cookies.
+                </p>
+            </div>
+            <div id="cookieConsentButtons">
+                <button type="button" class="btn btn-success" id="acceptBtn">Approve</button>
+                <button type="button" class="btn btn-danger" id="rejectBtn">Decline</button>
+                <button type="button" class="btn" id="customizeBtn">Customize cookies</button>
+            </div>
+        </div>
+    </div>
+    <div class="customizecookie d-none">
+        <div class="container">
+            <div class="cookieheading cookiHeadingForCustomize">
+                <h4>This page uses cookies</h4>
+            </div>
+            <div class="necessarycookie">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Necessary cookies - cannot be turned off</h5>
+                    </div>
+                        <!-- Toggle Switch -->
+                    <div class="col-3 setChoice">
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="necessaryCheckbox" checked disabled>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="necessarycontent">
+                    <p>
+                        Necessary cookies handle basic functions such as page navigation and access to secure areas of the website.The website can not
+                        function optimally without these cookies.
+                    </p>
+                </div>
+            </div>
+            <div class="marketing">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Marketing</h5>
+                    </div>
+                    <div class="col-3 setChoice">
+                        <!-- Toggle Switch -->
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="marketingCheckBox" checked>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="necessarycontent">
+                    <p>
+                        This cookie helps us to find users who are intrested in information on various topics so that we can 
+                        provide you with relevant advertisments from us.
+                    </p>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-success" id="saveAndCloseCookies">Save and Close</button>
+                <button type="button" class="btn readMorePrivacyBtn" id="readMorePrivacy">Read more</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-text">Follow Us</h4>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/profile.php?id=61551928796163" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@instaraising?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        <li><a href="https://www.instagram.com/instaraisingglobal/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/instaraising/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/InstaRaising" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCGxESF_5Qbw0H-vzlvoJ8nw" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Subscribe to Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" id="irnewsletter" placeholder="Your Email" required>
+                        <button type="submit" class="irsubscription" data-language="English">Subscribe</button>
+                    </form>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i> Email: ir-contact@instaraising.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: (+47) 982 34 223</p>
+                </div>
+            </div>
+        </div>
+    </footer> 
+    
+    <!-- core  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="../../public/js/account.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                sessionStorage.setItem('selectedLanguage', 'en');
+        });
+    </script>
+
+    <script src="../../public/js/header.js"></script>
+    <script>
+        function validateForm() {
+            var radios = document.getElementsByName('product');
+    
+            for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                return true; // Allow form submission
+            }
+            }
+            $("#validationResult").show();
+            // alert('Please select a radio button.');
+            return false; // Prevent form submission
+        }
+
+        
+    </script>
+</body>
