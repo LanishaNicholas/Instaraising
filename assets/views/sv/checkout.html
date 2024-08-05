@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout">
+    <meta name="author" content="Devcrud">
+    <title>Instaraising - Checkout</title>
+    <link rel="icon" type="image/png" href="../../img/logoonly.png"/>
+    <link rel="stylesheet" href="../../public/css/bootstrap.css">
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/headers.css">
+    <link rel="stylesheet" href="../../public/css/cookies.css">
+    <link rel="stylesheet" href="../../public/css/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
+</head>
+<body>
+    <header class="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="../../img/logo.png" alt="Instaraising" width="150px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html"></i>Hem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"></i>Om oss</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="search.html">Hitta din match</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Vanliga frågor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="contactus.html">Kontakta oss</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languagesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Språk
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="languagesDropdown">
+                                <!-- Add your language options here -->
+                                <a class="dropdown-item" href="../en/index.html">Engelska</a>
+                                <a class="dropdown-item" href="../no/index.html">Norska</a>
+                                <a class="dropdown-item" href="index.html">Svenska</a>
+                                <a class="dropdown-item" href="../dk/index.html">Danska</a>
+                                <a class="dropdown-item" href="../fi/index.html">Finska</a>
+                                <a class="dropdown-item" href="../is/index.html">Isländska</a>
+                               
+                            </div>
+                        </li>
+                        <!-- End Languages Dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="checkoutdetails">
+            <div class="row">
+                <div class="logodiv">
+                    <img id="orglogo" src="" alt="org-logo">
+                </div>
+            </div>
+            <div class="row">
+                <div id="orgname"></div>
+            </div>
+        </div>
+        <!-- <form action="https://instaraisingwebapp.azurewebsites.net/login" method="POST" id="payment-form" class="mb-3" onsubmit="return validateForm()"> -->
+        <form action="http://127.0.0.1:5000/login" method="POST" id="payment-form" class="mb-3" onsubmit="return validateForm()">
+            <div class="payment-container mb-3">
+                <div class="row paymentRow">
+                    <div class="col-9">
+                        <label for="amountDonated" class="paymentamountdisplay">Genomsnittligt bidrag är 300 SEK</label><br>
+                        <label  class="paymentamountdisplay" id="amountselectedlabel"></label>
+                        <input type="text" class="form-control" id="amountDonated" value="300" name="amountDonated" hidden required>
+                    </div>
+                    <div class="col-3">
+                        <!-- <button class="btn showAmountBtn">Ändra</button> -->
+                        <div class="dropdown" style="float:right;">
+                            <button class="dropbtn">Ändra belopp</button>
+                            <div class="dropdown-content">
+                                <a href="#" class="newamount" data-amount="50">50 SEK</a>
+                                <a href="#" class="newamount" data-amount="150">150 SEK</a>
+                                <a href="#" class="newamount" data-amount="300">300 SEK</a>
+                                <a href="#" class="newamount" data-amount="400">400 SEK</a>
+                                <a href="#" class="newamount" data-amount="500">500 SEK</a>
+                                <a href="#" class="newamount" data-amount="1000">1000 SEK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="payment-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="firstName" class="paymentLabel">Förnamn :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="lastName" class="paymentLabel">Efternamn :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="mobileNumber" class="paymentLabel">Mobilnummer :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="mobileNumber" name="mobileNumber" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email" class="paymentLabel">E-post :</label><span class="red-asterisk">*</span>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="address" class="paymentLabel">Adress :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="address" name="address" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="postalCode" class="paymentLabel">Postnummer :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="postalCode" name="postalCode" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="postPlace" class="paymentLabel">Postkontor :</label><span class="red-asterisk">*</span>
+                            <input type="text" class="form-control" id="postPlace" name="postPlace" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <!-- <label for="currency" class="paymentLabel">Valuta</label> -->
+                            <input type="text" class="form-control" id="currency" name="currency" value="SEK" hidden required>
+                            <input type="text" class="form-control" id="language" value="sv" name="language" required hidden>
+                            <input type="text" class="form-control" id="orgNamePay" name="orgNamePay" hidden required >
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row mt-2 mb-2">
+                    <h5>Välj betalningssätt</h5>
+                    <div class="payment-options">
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input type="radio" name="product" value="SEKORG" class="form-check-input" id="sekorg">
+                                <label class="form-check-label" for="credit">
+                                    <div class="card-icon">
+                                        
+                                        <img src="/assets/img/credit-card-icon.png" alt="Credit Card Icon"> Prenumerera för att stödja denna organisation med kreditkort
+                                    </div>
+                                    
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acceptTerms" required>
+                    <label class="form-check-label" for="acceptTerms">
+                        Jag accepterar <a href="privacy.html" class="linkColor">villkoren och bestämmelserna</a>
+                    </label><span class="red-asterisk">*</span>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="acceptNewsletter">
+                    <label class="form-check-label" for="acceptNewsletter">
+                        Jag vill få nyhetsbrev
+                    </label>
+                </div>
+                <button id="payNow" class="paynow mt-3 mb-3" type="submit"><span >Betala nu</span></button>
+                <p id="validationResult" style="color: red; display: none;">Vänligen välj betalningsmetod</p>
+            </div>
+            
+        </form>
+
+    </div>
+
+    <!-- Overlay background -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Cookie Consent Modal -->
+    <div id="cookieConsent">
+        <div class="container">
+            <div class="cookieheading">
+                <h4>Denna sida använder cookies</h4>
+            </div>
+            <div class="cookiecontent">
+                <p>
+                    På vår sida använder vi cookies för att förbättra användarupplevelsen, optimera webbsidan, och för marknadsföring.
+                    Genom att samtycka accepterar du hur vi använder cookies.
+
+                </p>
+            </div>
+            <div id="cookieConsentButtons">
+                <button type="button" class="btn btn-success" id="acceptBtn">Godkänn</button>
+                <button type="button" class="btn btn-danger" id="rejectBtn">Neka</button>
+                <button type="button" class="btn" id="customizeBtn">Anpassa cookies</button>
+            </div>
+        </div>
+    </div>
+    <div class="customizecookie d-none">
+        <div class="container">
+            <div class="cookieheading cookiHeadingForCustomize">
+                <h4>Denna sida använder cookies</h4>
+            </div>
+            <div class="necessarycookie">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Nödvändiga cookies – kan inte stängas av</h5>
+                    </div>
+                        <!-- Toggle Switch -->
+                    <div class="col-3 setChoice">
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="necessaryCheckbox" checked disabled>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="necessarycontent">
+                    <p>
+                        Nödvändiga cookies används för grundläggande funktioner såsom sidnavigering och för att 
+                        få tillgång till skyddade delar av webbsidan. Webbplatsen kan inte fungera 
+                        tillfredsställande utan dessa cookies.
+                    </p>
+                </div>
+            </div>
+            <div class="marketing">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Marknadsföring</h5>
+                    </div>
+                    <div class="col-3 setChoice">
+                        <!-- Toggle Switch -->
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="marketingCheckBox" checked>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="necessarycontent">
+                    <p>
+                        Den här cookien hjälper oss att hitta användare som är intresserade av information om 
+                        olika ämnen, så att vi kan ge dig relevanta annonser.
+                    </p>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-success" id="saveAndCloseCookies">Spara ändringar och stäng.</button>
+                <button type="button" class="btn readMorePrivacyBtn" id="readMorePrivacy">Läs mer</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-text">Följ oss</h4>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/profile.php?id=61551928796163" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@instaraising?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        <li><a href="https://www.instagram.com/instaraisingglobal/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/instaraising/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/InstaRaising" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCGxESF_5Qbw0H-vzlvoJ8nw" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Prenumerera på vårt nyhetsbrev</h4>
+                    <form class="newsletter-form">
+                        <input type="email" id="irnewsletter" placeholder="Din E-post" required>
+                        <button type="submit" class="irsubscription" data-language="English">Prenumerera</button>
+                    </form>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Kontakta oss</h4>
+                    <p><i class="fas fa-envelope"></i> E-post: ir-contact@instaraising.com</p>
+                    <p><i class="fas fa-phone"></i> Telefon: (+47) 982 34 223</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- core  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="../../public/js/account.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+                sessionStorage.setItem('selectedLanguage', 'sv');
+        });
+    </script>
+
+    <script src="../../public/js/header.js"></script>
+    <script>
+        function validateForm() {
+        var radios = document.getElementsByName('product');
+  
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            return true; // Allow form submission
+          }
+        }
+        $("#validationResult").show();
+        // alert('Please select a radio button.');
+        return false; // Prevent form submission
+    }
+    </script>
+</body>
+</html>
