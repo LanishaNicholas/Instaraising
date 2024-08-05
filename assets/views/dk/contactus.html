@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Start your development with Insta Raising page.">
+    <meta name="author" content="Devcrud">
+    <title>Instaraising - Contact Us</title>
+    <link rel="icon" type="image/png" href="../../img/logoonly.png"/>
+    <link rel="stylesheet" href="../../public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/css/headers.css">
+    <link rel="stylesheet" href="../../public/css/contactus.css">
+    <link rel="stylesheet" href="../../public/css/cookies.css">
+    <link rel="stylesheet" href="../../public/css/MessageSystem.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   
+</head>
+<body>
+
+    <header class="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img src="../../img/logo.png" alt="Instaraising" width="150px"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index.html"></i>Hjem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.html"></i>Om os</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="search.html">Find din match</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">Ofte stillede spørgsmål</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contactus.html">Kontakt os</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languagesDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Sprog
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="languagesDropdown">
+                                <!-- Add your language options here -->
+                                <a class="dropdown-item" href="../en/index.html">Engelsk</a>
+                                <a class="dropdown-item" href="../no/index.html">Norsk</a>
+                                <a class="dropdown-item" href="../sv/index.html">Svensk</a>
+                                <a class="dropdown-item" href="index.html">Dansk</a>
+                                <a class="dropdown-item" href="../fi/index.html">Finsk</a>
+                                <a class="dropdown-item" href="../is/index.html">Islandsk</a>
+                               
+                            </div>
+                        </li>
+                        <!-- End Languages Dropdown -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contactimg">
+        <div class="imagecontainer">
+            <img src="../../img/contact-us.jpeg" alt="contactus">
+        </div>
+    </section>
+
+    <div class="container contactcontainer mb-5">
+        <div class="row managecontent">
+            <div class="row heading">
+                <h1>Kontakt os</h1>
+            </div>
+            
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name" class="contactlabel">Navn <span class="mustfill">*</span></label>
+                    <input type="text" id="name" name="name" class="formfields" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="contactlabel">Telefon <span class="mustfill">*</span></label>
+                    <input type="tel" id="phone" name="phone" class="formfields" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="contactlabel">E-mail <span class="mustfill">*</span></label>
+                    <input type="email" id="email" name="email" class="formfields" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="contactlabel">Besked <span class="mustfill">*</span></label>
+                    <textarea id="message" name="message" class="formfields" rows="4" required></textarea>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                    <label for="privacy-policy" class="contactlabel">Jeg har læst og accepterer  <a href="privacy.html" class="linkstyle">privatlivspolitikken</a> <span class="mustfill">*</span></label>
+                </div>
+                
+                <div class="checkbox-group mb-2">
+                    <input type="checkbox" id="subscribe-newsletter" name="subscribe-newsletter">
+                    <label for="subscribe-newsletter" class="contactlabel">Tilmeld dig vores nyhedsbrev</label>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+                <p class="checkboxvalidation mt-5">Venligst accepter vilkårene og betingelserne</p>
+            </form>
+        </div>
+        <div class="row managecontent">
+            <p>Hvis du har spørgsmål, besøg venligst vores <a href="faq.html" class="linkstyle" target="_blank">FAQs-sektion</a> </p>
+        </div>
+    </div>
+
+    <!-- Overlay background -->
+    <div class="overlay" id="overlay"></div>
+    <!-- Cookie Consent Modal -->
+    <div id="cookieConsent">
+        <div class="container">
+            <div class="cookieheading">
+                <h4>Denne side bruger cookies</h4>
+            </div>
+            <div class="cookiecontent">
+                <p>
+                    På vores side bruger vi cookies til at forbedre brugeroplevelsen, optimere websiden, og til markedsføring.
+                    Ved at give samtykke accepterer du, hvordan vi bruger cookies.
+
+                </p>
+            </div>
+            <div id="cookieConsentButtons">
+                <button type="button" class="btn btn-success" id="acceptBtn">Acceptér</button>
+                <button type="button" class="btn btn-danger" id="rejectBtn">Afvis</button>
+                <button type="button" class="btn" id="customizeBtn">Tilpas cookies</button>
+            </div>
+        </div>
+    </div>
+    <div class="customizecookie d-none">
+        <div class="container">
+            <div class="cookieheading cookiHeadingForCustomize">
+                <h4>Denne side bruger cookies</h4>
+            </div>
+            <div class="necessarycookie">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Nødvendige cookies – kan ikke slås fra</h5>
+                    </div>
+                        <!-- Toggle Switch -->
+                    <div class="col-3 setChoice">
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="necessaryCheckbox" checked disabled>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="necessarycontent">
+                    <p>
+                        Nødvendige cookies bruges til grundlæggende funktioner som side-navigation 
+                        og for at få adgang til beskyttede dele af websiden. Websiden kan ikke fungere tilfredsstillende uden disse cookies.
+                    </p>
+                </div>
+            </div>
+            <div class="marketing">
+                <div class="row necesarryHeadingSetting">
+                    <div class="col-9 necessaryheading">
+                        <h5>Markedsføring</h5>
+                    </div>
+                    <div class="col-3 setChoice">
+                        <!-- Toggle Switch -->
+                        <label class="onoff-switch">
+                            <input type="checkbox" id="marketingCheckBox" checked>
+                            <span class="onoff-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="necessarycontent">
+                    <p>
+                        Denne cookie hjælper os med at finde brugere, der er interesserede i information om forskellige emner, 
+                        så vi kan give dig relevante annonser.
+                    </p>
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-success" id="saveAndCloseCookies">Gem ændringer og luk</button>
+                <button type="button" class="btn readMorePrivacyBtn" id="readMorePrivacy">Læs mere</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-text">Følg os</h4>
+                    <ul class="social-media">
+                        <li><a href="https://www.facebook.com/profile.php?id=61551928796163" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.tiktok.com/@instaraising?lang=en" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        <li><a href="https://www.instagram.com/instaraisingglobal/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/instaraising/?viewAsMember=true" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://twitter.com/InstaRaising" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCGxESF_5Qbw0H-vzlvoJ8nw" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Abonner på vores nyhedsbrev</h4>
+                    <form class="newsletter-form">
+                        <input type="email" id="irnewsletter" placeholder="Din E-mail" required>
+                        <button type="submit" class="irsubscription" data-language="English">Abonner</button>
+                    </form>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-text">Kontakt os</h4>
+                    <p><i class="fas fa-envelope"></i> E-mail: ir-contact@instaraising.com</p>
+                    <p><i class="fas fa-phone"></i> Telefon: (+47) 982 34 223</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../../vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="../../public/js/header.js"></script>
+    <script src="../../public/js/MessageSystem.js"></script>
+    <script src="../../public/js/contactus.js"></script>
+    
+</body>
+</html>
