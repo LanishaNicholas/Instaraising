@@ -1,0 +1,152 @@
+ /* Overlay background */
+ .overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+
+/* New design */
+#cookieConsent {
+  display: none;
+  width: 500px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(to bottom, #00aeef,#006991 );
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+/* Media query for tablets (portrait mode) and mobile phones */
+@media (max-width: 768px) {
+  #cookieConsent {
+    width: 90%; /* Adjust the width to fit smaller screens */
+    max-width: 500px; /* Set a maximum width for larger screens */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    bottom: 10px; /* Adjust bottom position for smaller screens */
+    right: auto; /* Reset right position */
+  }
+}
+
+
+#cookieConsentButtons button {
+  margin-right: 10px;
+}
+.cookieheading{
+  padding: 10px;
+  text-align: left;
+}
+.cookiecontent,
+.necessarycookie,
+.marketing{
+  padding: 10px;
+}
+#acceptBtn,
+#rejectBtn{
+  /* background-color: #00aeef; */
+  border-radius: 20px;
+  color: #fff;
+}
+
+#customizeBtn{
+  text-decoration: underline;
+  color: #fff;
+}
+
+.customizecookie {
+  width: 500px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #d1d3e2;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+}
+
+/* Media query for screens smaller than 768px (typical tablet and mobile screens) */
+@media (max-width: 768px) {
+  .customizecookie {
+    width: 90%; /* Adjust the width to fit smaller screens */
+    max-width: 90%; /* Set a maximum width for smaller screens */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Adjust for centering */
+    bottom: 10px; /* Adjust bottom position for smaller screens */
+    right: auto; /* Reset right position */
+  }
+}
+
+/* Styles for the on/off switch container */
+.onoff-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Styles for the hidden input checkbox */
+.onoff-switch input {
+  display: none;
+}
+
+/* Styles for the slider (handle) */
+.onoff-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+/* Styles for the slider when the switch is turned on */
+.onoff-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* Styles for the checked state of the hidden input (switch on) */
+.onoff-switch input:checked + .onoff-slider {
+  background-color: #2196F3; /* Blue color when on */
+}
+
+/* Styles for the checked state of the hidden input (move the slider to the right) */
+.onoff-switch input:checked + .onoff-slider:before {
+  transform: translateX(26px);
+}
+
+.cookiHeadingForCustomize{
+  color: #006991;
+}
+
+.readMorePrivacyBtn{
+  color: #006991;
+  text-decoration: underline;
+}
+
+.onoff-switch input:disabled + .onoff-slider {
+  background-color: #2196F3; /* Change the background color to visually indicate disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed to indicate it's not clickable */
+}
+
