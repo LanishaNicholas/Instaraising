@@ -1,0 +1,111 @@
+
+
+/* Container Styles */
+.newscontainer {
+    margin-top: 100px;
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+    padding: 20px;
+}
+
+/* Heading Styles */
+.newsheading {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 45px;
+    font-weight: bold;
+}
+
+/* Introduction Section Styles */
+.introduction {
+    margin-bottom: 20px;
+}
+
+.introduction p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* First Part Section Styles */
+.firstpart {
+    margin-bottom: 20px;
+}
+
+.firstpart h5 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.firstpart p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Image Section Styles */
+.imagediv img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* box-shadow: 0 9px 4px rgb(0 0 0 / 51%); */
+}
+
+.educationimg{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+/* Responsive Styles for Tablet */
+@media only screen and (max-width: 768px) {
+    .newsheading {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .firstpart h5 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+
+    .imagediv{
+        display: none;
+    }
+
+    .col-6 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media only screen and (max-width: 480px) {
+    .newscontainer {
+        padding: 10px;
+    }
+
+    .newsheading {
+        font-size: 20px;
+        margin-bottom: 25px;
+    }
+
+    .firstpart h5 {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .imagediv{
+        display: none;
+    }
+
+    .col-6 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
